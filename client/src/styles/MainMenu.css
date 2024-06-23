@@ -1,0 +1,49 @@
+/* Style for the entire MainMenu component */
+.MainMenu {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Style for the heading */
+.MainMenu h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style for the links */
+.MainMenu .menu-link {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.MainMenu .menu-link:hover {
+    text-decoration: underline;
+}
+
+/* Style for the profile section */
+.MainMenu .profile {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.MainMenu .profile img {
+    border-radius: 50%;
+}
+
+/* Style for the chat rooms section */
+.MainMenu .chat-rooms {
+    margin-top: 20px;
+}
+
+.MainMenu .chat-rooms ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.MainMenu .chat-rooms li {
+    margin-bottom: 5px;
+}
