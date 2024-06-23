@@ -45,7 +45,12 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Routes
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Chat Application!');
+});
+
+// Other routes
 app.post('/api/register', (req, res) => {
     const { username, password } = req.body;
     if (!username || !password) {
