@@ -1,3 +1,4 @@
+// client/src/App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
@@ -7,6 +8,7 @@ import Register from './components/Register';
 import ChatRoom from './components/ChatRoom';
 import MainMenu from './components/MainMenu';
 import Profile from './components/Profile';
+import ErrorPage from './components/ErrorPage';
 
 ReactGA.initialize('YOUR_GOOGLE_ANALYTICS_TRACKING_ID');
 
@@ -24,6 +26,7 @@ const App = () => {
                 <Route path="/main-menu" component={MainMenu} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/" exact component={LandingPage} />
+                <Route component={ErrorPage} />
             </Switch>
         </Router>
     );
