@@ -45,9 +45,17 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Root route
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Root route for serving the React app
 app.get('/', (req, res) => {
-    res.send('Welcome to the Chat Application!');
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+// Fallback route for serving the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 // Other routes
