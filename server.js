@@ -48,17 +48,7 @@ const upload = multer({ storage });
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Root route for serving the React app
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
-// Fallback route for serving the React app
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
-// Other routes
+// API routes
 app.post('/api/register', (req, res) => {
     const { username, password } = req.body;
     if (!username || !password) {
@@ -225,6 +215,11 @@ io.on('connection', (socket) => {
             io.to(room).emit('roomData', { room, users: rooms[room] });
         }
     });
+});
+
+// Serve the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 // Start server
